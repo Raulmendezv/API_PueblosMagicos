@@ -24,15 +24,19 @@ function addReview() {
   // Code
 }
 
-function updateReview() {
-  // Code
-}
-
 function getAllReviews() {
   // Code
 }
 
 function getReviewsBy() {
+  // Code
+}
+
+function updateOwnReview() {
+  // Code
+}
+
+function deleteOwnReview() {
   // Code
 }
 
