@@ -1,41 +1,75 @@
-const Admin = require('../models/Admin')
+const dummyData = require("../dummyData");
 
-function addTown() {
-    // Code
+function addTown(req, res) {
+  // Code
+  res.status(201).send(req.body);
 }
 
-function getAllTowns() {
-    // Code
+function getAllTowns(req, res) {
+  // Code
+  res.status(200).send(dummyData.dummiesTowns);
 }
 
-function getTownBy() {
-    // Code
+function getTownByID(req, res) {
+  // Code
+  console.log(req.params);
+  res.status(200).send(dummyData.dummiesTowns[req.params.id - 1]);
+}
+
+function getAllTownsByAttribute(req, res) {
+  res.send(
+    dummyData.dummiesTowns.filter((town) => {
+      return Object.values(town).includes(req.params.value) ? town : false;
+    })
+  );
+}
+
+function getFieldsOfTown(req, res) {
+  // Code
+  const keys = req.params.keys.split(",");
+  console.log(keys);
 }
 
 function updateTown() {
-    // Code
+  // Code
 }
 
 function getAllReviews() {
-    // Code
+  // Code
 }
 
 function getReviewsBy() {
-    // Code
+  // Code
 }
 
 function deleteReview() {
-    // Code
+  // Code
 }
 
 function getAllUsers() {
-    // Code
+  // Code
 }
 
 function getUserBy() {
-    // Code
+  // Code
 }
 
 function deleteUser() {
-    // Code
+  // Code
 }
+
+// exportamos las funciones definidas
+module.exports = {
+  addTown,
+  getAllTowns,
+  getAllTownsByAttribute,
+  getFieldsOfTown,
+  getTownByID,
+  updateTown,
+  getAllReviews,
+  getReviewsBy,
+  deleteReview,
+  getAllUsers,
+  getUserBy,
+  deleteUser,
+};
