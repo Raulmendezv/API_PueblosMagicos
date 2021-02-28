@@ -34,16 +34,36 @@ function updateTown() {
   // Code
 }
 
-function getAllReviews() {
+function getAllReviews(req, res) {
   // Code
+  res.status(200).send(dummyData.dummiesReviews);
 }
 
-function getReviewsBy() {
+function getReviewsByID(req, res) {
   // Code
+  res.status(200).send(dummyData.dummiesReviews[req.params.id - 1]);
 }
 
-function deleteReview() {
+function getReviewsByAttribute(req, res) {
   // Code
+  res.send(
+    dummyData.dummiesReviews.filter((review) => {
+      return Object.values(review).includes(req.params.value) ? review : false;
+    })
+  );
+}
+
+function deleteReview(req, res) {
+  // Code 
+  const removedItem = dummyData.dummiesReviews.findIndex((review) => {
+    return Object.values(review).includes(parseInt(req.params.id));
+  });
+  if(removedItem == -1){
+    res.sendStatus(404);  
+  } else{
+    dummyData.dummiesReviews.splice(removedItem, 1);
+  res.status(200).send(dummyData.dummiesReviews);
+  }
 }
 
 function getAllUsers() {
@@ -67,7 +87,8 @@ module.exports = {
   getTownByID,
   updateTown,
   getAllReviews,
-  getReviewsBy,
+  getReviewsByID,
+  getReviewsByAttribute,
   deleteReview,
   getAllUsers,
   getUserBy,

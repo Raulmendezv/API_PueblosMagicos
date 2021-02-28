@@ -11,10 +11,10 @@ const dummiesAdmins = [
 ];
 
 const dummiesReviews = [
-  new Review(1, 4, "Ir al Mirador y comer la Comida 2", 3),
-  new Review(2, 1, "Lugar muy vacio", 4),
-  new Review(3, 5, "Lleno de bosques y zonas verdes", 5),
-  new Review(4, 5, "Visitar los centros historicos y artisticos", 3),
+  new Review(1, "4", "Ir al Mirador y comer la Comida 2", "3"),
+  new Review(2, "1", "Lugar muy vacio", "4"),
+  new Review(3, "5", "Lleno de bosques y zonas verdes", "5"),
+  new Review(4, "5", "Visitar los centros historicos y artisticos", "3"),
 ];
 
 const dummiesTowns = [
