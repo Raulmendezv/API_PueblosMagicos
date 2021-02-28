@@ -2,6 +2,7 @@ const Admin = require('../models/Admin')
 
 function addTown() {
     // Code
+    
 }
 
 function getAllTowns() {
