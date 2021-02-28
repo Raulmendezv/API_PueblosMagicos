@@ -11,10 +11,10 @@ const dummiesAdmins = [
 ];
 
 const dummiesReviews = [
-  new Review(1, 4, "Ir al Mirador y comer la Comida 2", 3),
-  new Review(2, 1, "Lugar muy vacio", 4),
-  new Review(3, 5, "Lleno de bosques y zonas verdes", 5),
-  new Review(4, 5, "Visitar los centros historicos y artisticos", 3),
+  new Review(1, "4", "Ir al Mirador y comer la Comida 2", "3"),
+  new Review(2, "1", "Lugar muy vacio", "4"),
+  new Review(3, "5", "Lleno de bosques y zonas verdes", "5"),
+  new Review(4, "5", "Visitar los centros historicos y artisticos", "3"),
 ];
 
 const dummiesTowns = [
@@ -93,7 +93,7 @@ const dummiesUsers = [
     "Grufty295",
     "asdas@ppp.com",
     "ab",
-    20,
+    "20",
     "dummies user 1",
     "Chihuahua",
     "Masculino",
@@ -105,7 +105,7 @@ const dummiesUsers = [
     "Jupera",
     "osdos@ppp.com",
     "abc",
-    21,
+    "21",
     "dummies user 2",
     "Chihuahua",
     "Masculino",
@@ -114,10 +114,10 @@ const dummiesUsers = [
   ),
   new User(
     3,
-    "Liuchota",
+    "Luichota",
     "esdes@ppp.com",
     "abcd",
-    22,
+    "22",
     "dummies user 3",
     "Texas",
     "Masculino",
@@ -129,7 +129,7 @@ const dummiesUsers = [
     "Chuy",
     "isdis@ppp.com",
     "abcd",
-    23,
+    "23",
     "dummies user 4",
     "Chihuahua",
     "Masculino",
