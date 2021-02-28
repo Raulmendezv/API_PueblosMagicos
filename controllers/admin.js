@@ -54,15 +54,15 @@ function getReviewsByAttribute(req, res) {
 }
 
 function deleteReview(req, res) {
-  // Code 
+  // Code
   const removedItem = dummyData.dummiesReviews.findIndex((review) => {
     return Object.values(review).includes(parseInt(req.params.id));
   });
-  if(removedItem == -1){
-    res.sendStatus(404);  
-  } else{
+  if (removedItem == -1) {
+    res.sendStatus(404);
+  } else {
     dummyData.dummiesReviews.splice(removedItem, 1);
-  res.status(200).send(dummyData.dummiesReviews);
+    res.status(200).send(dummyData.dummiesReviews);
   }
 }
 
@@ -76,28 +76,29 @@ function getUserByID(req, res) {
   res.status(200).send(dummyData.dummiesUsers[req.params.id - 1]);
 }
 
-function getUserByAttribute(req, res){
-    //Code
-    res.send(
-        dummyData.dummiesUsers.filter((user) => {
-          return Object.values(user).includes(req.params.value) ? user : false;
-        })
-      );
+function getUserByAttribute(req, res) {
+  //Code
+  res.send(
+    dummyData.dummiesUsers.filter((user) => {
+      return Object.values(user).includes(req.params.value) ? user : false;
+    })
+  );
 }
 
-function getFieldsOfUser(){
-    //Code
+function getFieldsOfUser() {
+  //Code
 }
+
 function deleteUser(req, res) {
   // Code
   const removedItem = dummyData.dummiesUsers.findIndex((user) => {
     return Object.values(user).includes(parseInt(req.params.id));
-     });
-    if(removedItem == -1){
-    res.sendStatus(404);  
-  } else{
+  });
+  if (removedItem == -1) {
+    res.sendStatus(404);
+  } else {
     dummyData.dummiesUsers.splice(removedItem, 1);
-  res.status(200).send(dummyData.dummiesUsers);
+    res.status(200).send(dummyData.dummiesUsers);
   }
 }
 
