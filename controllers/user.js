@@ -8,10 +8,6 @@ function getTownBy() {
   // Code
 }
 
-function updateTown() {
-  // Code
-}
-
 function addTownToFavorites() {
   // Code
 }
@@ -43,3 +39,17 @@ function deleteOwnReview() {
 function getUsersBy() {
   // Code
 }
+
+// exportamos las funciones definidas
+module.exports = {
+  getAllTowns,
+  getTownBy,
+  addTownToFavorites,
+  deleteTownFromFavorites,
+  addReview,
+  getAllReviews,
+  getReviewsBy,
+  deleteOwnReview,
+  updateOwnReview,
+  getUsersBy,
+};

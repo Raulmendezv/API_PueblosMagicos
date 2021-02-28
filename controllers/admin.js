@@ -1,42 +1,96 @@
-const Admin = require('../models/Admin')
+const dummyData = require("../dummyData");
 
-function addTown() {
-    // Code
-    
+function addTown(req, res) {
+  // Code
+  res.status(201).send(req.body);
 }
 
-function getAllTowns() {
-    // Code
+function getAllTowns(req, res) {
+  // Code
+  res.status(200).send(dummyData.dummiesTowns);
 }
 
-function getTownBy() {
-    // Code
+function getTownByID(req, res) {
+  // Code
+  console.log(req.params);
+  res.status(200).send(dummyData.dummiesTowns[req.params.id - 1]);
+}
+
+function getAllTownsByAttribute(req, res) {
+  res.send(
+    dummyData.dummiesTowns.filter((town) => {
+      return Object.values(town).includes(req.params.value) ? town : false;
+    })
+  );
+}
+
+function getFieldsOfTown(req, res) {
+  // Code
+  const keys = req.params.keys.split(",");
+  console.log(keys);
 }
 
 function updateTown() {
-    // Code
+  // Code
 }
 
-function getAllReviews() {
-    // Code
+function getAllReviews(req, res) {
+  // Code
+  res.status(200).send(dummyData.dummiesReviews);
 }
 
-function getReviewsBy() {
-    // Code
+function getReviewsByID(req, res) {
+  // Code
+  res.status(200).send(dummyData.dummiesReviews[req.params.id - 1]);
 }
 
-function deleteReview() {
-    // Code
+function getReviewsByAttribute(req, res) {
+  // Code
+  res.send(
+    dummyData.dummiesReviews.filter((review) => {
+      return Object.values(review).includes(req.params.value) ? review : false;
+    })
+  );
+}
+
+function deleteReview(req, res) {
+  // Code 
+  const removedItem = dummyData.dummiesReviews.findIndex((review) => {
+    return Object.values(review).includes(parseInt(req.params.id));
+  });
+  if(removedItem == -1){
+    res.sendStatus(404);  
+  } else{
+    dummyData.dummiesReviews.splice(removedItem, 1);
+  res.status(200).send(dummyData.dummiesReviews);
+  }
 }
 
 function getAllUsers() {
-    // Code
+  // Code
 }
 
 function getUserBy() {
-    // Code
+  // Code
 }
 
 function deleteUser() {
-    // Code
+  // Code
 }
+
+// exportamos las funciones definidas
+module.exports = {
+  addTown,
+  getAllTowns,
+  getAllTownsByAttribute,
+  getFieldsOfTown,
+  getTownByID,
+  updateTown,
+  getAllReviews,
+  getReviewsByID,
+  getReviewsByAttribute,
+  deleteReview,
+  getAllUsers,
+  getUserBy,
+  deleteUser,
+};
