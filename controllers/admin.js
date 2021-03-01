@@ -27,11 +27,23 @@ function getAllTownsByAttribute(req, res) {
 function getFieldsOfTown(req, res) {
   // Code
   const keys = req.params.keys.split(",");
-  console.log(keys);
+  keys.unshift("townID", "townName");
+  const towns = dummyData.dummiesTowns;
+
+  const reducedTowns = reduceObject(towns, keys);
+
+  res.send(reducedTowns);
 }
 
 function updateTown() {
   // Code
+  const indexOfItemToBeSearched = searchIndex(
+    dummyData.dummiesTowns,
+    req.params.id
+  );
+  const itemToBeSearched = dummyData.dummiesTowns[indexOfItemToBeSearched];
+  const updatedTown = { ...itemToBeSearched, ...req.body };
+  res.send(updatedTown);
 }
 
 function getAllReviews(req, res) {
@@ -55,15 +67,17 @@ function getReviewsByAttribute(req, res) {
 
 function deleteReview(req, res) {
   // Code
-  const removedItem = dummyData.dummiesReviews.findIndex((review) => {
-    return Object.values(review).includes(parseInt(req.params.id));
-  });
-  if (removedItem == -1) {
-    res.sendStatus(404);
-  } else {
-    dummyData.dummiesReviews.splice(removedItem, 1);
-    res.status(200).send(dummyData.dummiesReviews);
-  }
+  const indexOfItemToBeRemoved = searchIndex(
+    dummyData.dummiesReviews,
+    req.params.id
+  );
+
+  evaluateIndex(
+    res,
+    indexOfItemToBeRemoved,
+    dummyData.dummiesReviews.splice(indexOfItemToBeRemoved, 1),
+    dummyData.dummiesReviews
+  );
 }
 
 function getAllUsers(req, res) {
@@ -87,19 +101,27 @@ function getUserByAttribute(req, res) {
 
 function getFieldsOfUser() {
   //Code
+  const keys = req.params.keys.split(",");
+  keys.unshift("userID", "userName");
+  const users = dummyData.dummiesUsers;
+
+  const reducedUsers = reduceObject(users, keys);
+  res.send(reducedUsers);
 }
 
 function deleteUser(req, res) {
   // Code
-  const removedItem = dummyData.dummiesUsers.findIndex((user) => {
-    return Object.values(user).includes(parseInt(req.params.id));
-  });
-  if (removedItem == -1) {
-    res.sendStatus(404);
-  } else {
-    dummyData.dummiesUsers.splice(removedItem, 1);
-    res.status(200).send(dummyData.dummiesUsers);
-  }
+  const indexOfItemToBeRemoved = searchIndex(
+    dummyData.dummiesUsers,
+    req.params.id
+  );
+
+  evaluateIndex(
+    res,
+    indexOfItemToBeRemoved,
+    dummyData.dummiesUsers.splice(indexOfItemToBeRemoved, 1),
+    dummyData.dummiesUsers
+  );
 }
 
 // exportamos las funciones definidas

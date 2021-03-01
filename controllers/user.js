@@ -30,7 +30,12 @@ function getAllTownsByAttribute(req, res) {
 function getFieldsOfTowns(req, res) {
   // Code
   const keys = req.params.keys.split(",");
-  console.log(keys);
+  keys.unshift("townID", "townName");
+  const towns = dummyData.dummiesTowns;
+
+  const reducedTowns = reduceObject(towns, keys);
+
+  res.send(reducedTowns);
 }
 
 function addTownToFavorites(req, res) {
@@ -102,6 +107,14 @@ function getReviewsByAttribute(req, res) {
 
 function updateOwnReview(req, res) {
   // Code
+  const currentUser = dummyData.dummiesUsers[req.params.userId - 1];
+  const indexOfItemToBeUpdated = searchIndex(
+    currentUser.userReviews,
+    req.params.id
+  );
+  const itemToBeUpdated = currentUser.userReviews[indexOfItemToBeUpdated];
+  const updatedReview = { ...itemToBeUpdated, ...req.body };
+  res.send(updatedReview);
 }
 
 function deleteOwnReview(req, res) {

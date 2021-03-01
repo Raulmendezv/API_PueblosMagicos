@@ -15,4 +15,14 @@ function evaluateIndex(res, id, succesfullSearchProcedure, statement = []) {
   }
 }
 
+function reduceObject(collection, keys) {
+  const result = collection.map((item) =>
+    keys.reduce((acc, key) => {
+      acc[key] = item[key];
+      return acc;
+    }, {})
+  );
+  return result;
+}
+
 module.exports = { searchIndex, evaluateIndex };
