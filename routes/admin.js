@@ -16,7 +16,6 @@ const {
   getUserByAttribute,
   getFieldsOfUser,
   deleteUser,
-
 } = require("../controllers/admin");
 
 const prefix = "/:adminId/";
