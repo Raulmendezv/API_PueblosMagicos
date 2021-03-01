@@ -27,7 +27,7 @@ function getAllTownsByAttribute(req, res) {
   );
 }
 
-function getFieldsOfTown(req, res) {
+function getFieldsOfTowns(req, res) {
   // Code
   const keys = req.params.keys.split(",");
   console.log(keys);
@@ -73,18 +73,31 @@ function deleteTownFromFavorites(req, res) {
 
 function addReview(req, res) {
   // Code
+  res.status(201).send(req.body);
 }
 
 function getAllReviews(req, res) {
   // Code
+  res.status(200).send(dummyData.dummiesReviews);
 }
 
-function getReviewsByID(req, res) {
+function getReviewByID(req, res) {
   // Code
+  const indexOfItemToBeSearched = searchIndex(
+    dummyData.dummiesReviews,
+    req.params.id
+  );
+  const itemToBeSearched = dummyData.dummiesReviews[indexOfItemToBeSearched];
+  evaluateIndex(res, indexOfItemToBeSearched, "", itemToBeSearched);
 }
 
 function getReviewsByAttribute(req, res) {
   // Code
+  res.send(
+    dummyData.dummiesReviews.filter((review) => {
+      return Object.values(review).includes(req.params.value) ? review : false;
+    })
+  );
 }
 
 function updateOwnReview(req, res) {
@@ -93,6 +106,18 @@ function updateOwnReview(req, res) {
 
 function deleteOwnReview(req, res) {
   // Code
+  const currentUser = dummyData.dummiesUsers[req.params.userId - 1];
+  const indexOfItemToBeRemoved = searchIndex(
+    currentUser.userReviews,
+    req.params.id
+  );
+
+  evaluateIndex(
+    res,
+    indexOfItemToBeRemoved,
+    currentUser.userReviews.splice(indexOfItemToBeRemoved, 1),
+    currentUser.userReviews
+  );
 }
 
 function getUserByID(req, res) {
@@ -108,12 +133,12 @@ module.exports = {
   getAllTowns,
   getTownByID,
   getAllTownsByAttribute,
-  getFieldsOfTown,
+  getFieldsOfTowns,
   addTownToFavorites,
   deleteTownFromFavorites,
   addReview,
   getAllReviews,
-  getReviewsByID,
+  getReviewByID,
   getReviewsByAttribute,
   deleteOwnReview,
   updateOwnReview,

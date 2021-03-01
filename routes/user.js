@@ -4,12 +4,12 @@ const {
   getAllTowns,
   getTownByID,
   getAllTownsByAttribute,
-  getFieldsOfTown,
+  getFieldsOfTowns,
   addTownToFavorites,
   deleteTownFromFavorites,
   addReview,
   getAllReviews,
-  getReviewsByID,
+  getReviewByID,
   getReviewsByAttribute,
   deleteOwnReview,
   updateOwnReview,
@@ -22,15 +22,16 @@ const prefix = "/:userId/";
 router.get(prefix + "towns/", getAllTowns);
 router.get(prefix + "towns/:id", getTownByID);
 router.get(prefix + "towns/attribute/:value", getAllTownsByAttribute);
-router.get(prefix + "towns/fields/:keys/:id", getFieldsOfTown);
+router.get(prefix + "towns/fields/:keys", getFieldsOfTowns);
 router.get(prefix + "reviews/", getAllReviews);
-router.get(prefix + "reviews/:id", getReviewsByID);
+router.get(prefix + "reviews/:id", getReviewByID);
 router.get(prefix + "reviews/attribute/:value", getReviewsByAttribute);
 router.get(prefix + "users/:id", getUserByID);
 router.get(prefix + "users/attribute/:value", getUsersByAttribute);
 router.post(prefix + "towns/:id", addTownToFavorites);
+router.post(prefix + "reviews/", addReview);
+router.put(prefix + "reviews/:id", updateOwnReview);
 router.delete(prefix + "towns/:id", deleteTownFromFavorites);
-// router.get(prefix + "users/:id/fields/:keys", getFieldsOfUser);
-// router.delete(prefix + "users/:id", deleteUser);
+router.delete(prefix + "reviews/:id", deleteOwnReview);
 
 module.exports = router;
