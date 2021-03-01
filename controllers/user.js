@@ -122,10 +122,21 @@ function deleteOwnReview(req, res) {
 
 function getUserByID(req, res) {
   // Code
+  const indexOfItemToBeSearched = searchIndex(
+    dummyData.dummiesUsers,
+    req.params.id
+  );
+  const itemToBeSearched = dummyData.dummiesUsers[indexOfItemToBeSearched];
+  evaluateIndex(res, indexOfItemToBeSearched, "", itemToBeSearched);
 }
 
 function getUsersByAttribute(req, res) {
   // Code
+  res.send(
+    dummyData.dummiesUsers.filter((user) => {
+      return Object.values(user).includes(req.params.value) ? town : false;
+    })
+  );
 }
 
 // exportamos las funciones definidas
