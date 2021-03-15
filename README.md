@@ -90,17 +90,19 @@ _🗂 Librerías utilizadas:_
 >10. Consultar usuarios a través de un identificador único para conocer a la comunidad.
 
 
-## 📎 Liga de la aplicación:
+## Enlaces externos
+
+### 📎 Liga de la aplicación:
 
 * [Try me!](https://pueblosmagicos24.herokuapp.com/v1/)
 
 
-## 📎 Liga con la Documentación:
+### 📎 Liga con la documentación:
 
 * [Swagger](https://app.swaggerhub.com/apis/Grufty295/pueblosmagicos24/1.0.0)
 
 
-## 📎 Liga de la carpeta con los recursos implementados:
+### 📎 Liga de la carpeta con los recursos implementados:
 
 * [Carpeta de Google Drive](https://drive.google.com/drive/folders/1zLUi0zqNIMKX0grxBcncynOCQEhIR1wu?usp=sharing)
 
