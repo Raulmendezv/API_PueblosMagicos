@@ -95,9 +95,14 @@ _🗂 Librerías utilizadas:_
 * [Try me!](https://pueblosmagicos24.herokuapp.com/v1/)
 
 
-## 📎 Recursos implementados para el desarrollo del proyecto:
+## 📎 Liga con la Documentación:
 
-* [Recursos](https://drive.google.com/drive/folders/1zLUi0zqNIMKX0grxBcncynOCQEhIR1wu?usp=sharing)
+* [Swagger](https://app.swaggerhub.com/apis/Grufty295/pueblosmagicos24/1.0.0)
+
+
+## 📎 Liga de la carpeta con los recursos implementados:
+
+* [Carpeta de Google Drive](https://drive.google.com/drive/folders/1zLUi0zqNIMKX0grxBcncynOCQEhIR1wu?usp=sharing)
 
 
 
