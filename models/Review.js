@@ -1,6 +1,5 @@
 // Review.js
 /* Clase que representa una Reseña */
-
 class Review {
   #reviewCreationDate;
   constructor(reviewID, reviewRate, reviewAdvising, reviewSafety) {

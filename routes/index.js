@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
 // exportamos nuestro nuevo router
 module.exports = router;
 
-router.use("/user/", require("./user"));
-router.use("/admin/", require("./admin"));
+router.use("/user", require("./user"));
+router.use("/admin", require("./admin"));
 
 /* con el método use de nuestro router estamos indicando
  * que en la ruta 'v1/usuarios' estarán anidadas las rutas

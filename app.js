@@ -1,8 +1,9 @@
 // Importamos las bibliotecas necesarias
 var express = require("express"),
   bodyParser = require("body-parser"),
-  cors = require("cors"),
-  { dummyAdmin } = require("./dummyData");
+  cors = require("cors");
+require("./models/index");
+require("./config/passport");
 
 // Objeto global de la app
 var app = express();
@@ -16,7 +17,7 @@ app.use(bodyParser.json());
 app.use("/v1", require("./routes"));
 
 // Manejando los errores 404
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   var err = new Error("Not Found");
   err.status = 404;
   next(err);

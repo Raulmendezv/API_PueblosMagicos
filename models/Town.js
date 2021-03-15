@@ -5,28 +5,28 @@ class Town {
   constructor(
     townID,
     townName,
-    townLocation,
-    townSince,
-    townAttractions = [],
-    townCharacteristics,
-    townFestivities = [],
+    townBiome,
     townWeather,
+    townIncorporationYear,
+    townState,
+    townAttractions = [],
     townDishes = [],
-    townZone,
     townEthnics = [],
+    townFestivities = [],
+    townPhotos = [],
     townReviews = []
   ) {
     this.townID = townID;
     this.townName = townName;
-    this.townLocation = townLocation;
-    this.townSince = townSince;
+    this.townState = townState;
+    this.townIncorporationYear = townIncorporationYear;
     this.townAttractions = townAttractions;
-    this.townCharacteristics = townCharacteristics;
     this.townFestivities = townFestivities;
     this.townWeather = townWeather;
     this.townDishes = townDishes;
-    this.townZone = townZone;
+    this.townBiome = townBiome;
     this.townEthnics = townEthnics;
+    this.townPhotos = townPhotos;
     this.townReviews = townReviews;
   }
 }
