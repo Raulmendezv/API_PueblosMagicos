@@ -90,9 +90,16 @@ _🗂 Librerías utilizadas:_
 >10. Consultar usuarios a través de un identificador único para conocer a la comunidad.
 
 
-## 📎 Liga para probar la aplicación:
+## 📎 Liga de la aplicación:
 
-* [Try it!](https://pueblosmagicos24.herokuapp.com/v1/)
+* [Try me!](https://pueblosmagicos24.herokuapp.com/v1/)
+
+
+## 📎 Recursos implementados para el desarrollo del proyecto:
+
+* [Recursos](https://drive.google.com/drive/folders/1zLUi0zqNIMKX0grxBcncynOCQEhIR1wu?usp=sharing)
+
+
 
 ## ✒️ Autores: 
 
